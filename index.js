@@ -282,4 +282,7 @@ app.get("/export", async (req, res) => {
 cron.schedule("0 9 * * *", checkExpiry);
 
 // ================== SERVER ==================
+app.get("/", (req, res) => {
+  res.send("Gym bot running 🚀");
+});
 app.listen(3000, () => console.log("Server running"));

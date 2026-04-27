@@ -183,7 +183,7 @@ app.post("/razorpay-webhook", async (req, res) => {
   if (event.event === "payment_link.paid") {
   const data = event.payload.payment_link.entity;
 
-  const phone = "whatsapp:+91" + data.customer.contact;
+  const phone = "+91" + data.customer.contact;
   const temp = users[phone];
 
   const user = await User.findOne({ phone });
